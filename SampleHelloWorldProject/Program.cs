@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace SampleHelloWorldProject
 {
@@ -28,16 +30,35 @@ namespace SampleHelloWorldProject
                 switch (words[0])
                 {
                     case "ping":
+                        Console.WriteLine($"Command for pinging something.");
+                        break;
                     case "list":
-                        Console.WriteLine($"Entered command = {command}, parameters = none.");
+                        Console.WriteLine($"Entered command = {command}, without parameters.");
                         break;
                     case "echo":
-                        Console.WriteLine($"Entered command = echo, parameters = {words[1]}");
+                        if(words.Length < 2) Console.WriteLine("Its just echo without any words.");
+                        else Console.WriteLine($"Its like pinging, but echo. Word for echo: {words[1]}");
                         break;
                     case "login":
+                        if(words.Length < 3) Console.WriteLine("You must give some credentials."); 
+                        else Console.WriteLine($"Are you want to come in? But you just can see what you enter: \"{words[1]}\" and \"{words[2]}\".");
+                        break;
                     case "msg":
+                        if (words.Length > 2)
+                        {
+                            Console.WriteLine($"Sending a message...");
+                            Thread.Sleep(1000);
+                            Console.WriteLine($"...");
+                            Thread.Sleep(1000);
+                            Console.WriteLine($"...");
+                            Thread.Sleep(700);
+                            Console.WriteLine($"Fail.");
+                        }
+                        else Console.WriteLine("What is your message and who you sending it?");
+                        break;
                     case "file":
-                        Console.WriteLine($"Entered command = {words[0]}, parameters = {words[1]}{words[2]}");
+                        if(words.Length < 3) Console.WriteLine("Nope.");
+                        else Console.WriteLine($"Entered command = {words[0]}. Its file opening or something. Parameters = {words[1]}{words[2]}");
                         break;
                     case "exit":
                         Environment.Exit(0);
