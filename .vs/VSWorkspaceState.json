@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Introduction1",
+    "\\Introduction1\\Introduction1",
+    "\\seminar01",
+    "\\seminar02",
+    "\\seminar03",
+    "\\seminar03\\seminar03",
+    "\\seminar04(SOAP)",
+    "\\seminar05(rest)",
+    "\\seminar06(mq)"
+  ],
+  "SelectedNode": "\\Introduction1\\Introduction1\\Program.cs",
+  "PreviewInSolutionExplorer": false
+}
